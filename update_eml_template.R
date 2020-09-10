@@ -11,6 +11,10 @@ xpath_pre <- "/eml:eml/dataset/"
 y_keywords <- y[, c(26,27)]
 y_sub <- select(y, -c(26,27))
 
+# two ways to add keywords. Either add as many keyword child nodes as there are keywords, then iterate
+# or iterate the second of these two commands of each keyword value. problem is, this errors but works!
+xml_add_child(xml_find_all(x, xpath = "/eml:eml/dataset", xml_ns(x)), "keywordSet")
+xml_set_text(xml_add_child(xml_find_all(x, xpath = "/eml:eml/dataset/keywordSet"), "keyword"),keyword)
 
 #<keywordSet>
 #<keyword>farmland birds</keyword>
