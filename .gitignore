@@ -9,6 +9,7 @@
 .Ruserdata
 *.token.R
 eml_*.xml
+*.csv
 
 # Example code in package build process
 *-Ex.R

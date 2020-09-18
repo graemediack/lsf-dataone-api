@@ -1,6 +1,4 @@
-library(xml2)
-library(EML) # might not use, complex functionality
-library(tidyverse)
+
 # INPUT: csv of metadata to build eml.xml file
 # OUPUT: eml.xml file 
 # PLANNED OUTPUT: create datapackage and upload to KNB

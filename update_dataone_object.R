@@ -1,15 +1,4 @@
-#DataONE Authentication Token
-options(dataone_token = "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJodHRwOlwvXC9vcmNpZC5vcmdcLzAwMDAtMDAwMy0xMDIzLTQ3MDAiLCJmdWxsTmFtZSI6IkdyYWVtZSBEaWFjayIsImlzc3VlZEF0IjoiMjAyMC0wOS0xNFQwOTowNjoyNi45ODUrMDA6MDAiLCJjb25zdW1lcktleSI6InRoZWNvbnN1bWVya2V5IiwiZXhwIjoxNjAwMTM5MTg2LCJ1c2VySWQiOiJodHRwOlwvXC9vcmNpZC5vcmdcLzAwMDAtMDAwMy0xMDIzLTQ3MDAiLCJ0dGwiOjY0ODAwLCJpYXQiOjE2MDAwNzQzODZ9.UH63yv8B4LfUkIy9uYIO2f_SdPcSru51MdsLIZ_6u4HhjgqsjlD2XwNLH6Xxc6A7uNA_U5XPKtnY-w2lrSIEetvbVADVrht29S0jiPzDRUglTDmb3gZriZVgg0Rm6W3iVoxZ4GmSaCq_EOSRtiTpGzI98cXq5OREqMzQP0o6fLnmn24sfVgNZJvwbXazijXKarJjlaL7zkf6Wwej7q3yA1ue4geZAgh0RmA_KVETGLTlhprEqFDE8clFa8p12JHYct0XUjt953uvA7udGwMRAlUB1TolIGUHuwZCgFWblv75Yl1iEz4j2NBn_2sWN9UIK-JkHjM-qLuRWCZ8J-JK0A")
-# Check Token
-am <- AuthenticationManager()
-getTokenInfo(am)
 
-testClient <- D1Client("STAGING2", "urn:node:mnTestKNB")
-testCn <- CNode("STAGING2")
-testMn <- getMNode(testCn, "urn:node:mnTestKNB")
-cn <- CNode("PROD")
-mn <- getMNode(cn, "urn:node:KNB")
-d1c <- D1Client(cn, mn)
 
 result <- query(testMn,solrQuery=list(q="metadataProvider:Graeme Diack"),as="data.frame")
 result[1,c("id", "title")]
