@@ -1,60 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packageId="urn:uuid:3be7aac9-ef89-437c-8eee-1394b0a4aa50" system="knb" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+<eml:eml
+    packageId="ERROR"
+    xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0"
+    xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    system="knb"
+    xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
     <dataset>
-        <title>dataset_title</title>
+        <title>ERROR</title>
         <creator>
             <individualName>
-                <givenName>creator_givenName</givenName>
-                <surName>creator_surName</surName>
+                <givenName>ERROR</givenName>
+                <surName>ERROR</surName>
             </individualName>
-            <organizationName>creator_organizationName</organizationName>
-            <electronicMailAddress>creator_electronicMailAddress</electronicMailAddress>
-            <userId directory="https://orcid.org">creator_userId</userId>
+            <organizationName>ERROR</organizationName>
         </creator>
         <metadataProvider>
             <individualName>
-                <givenName>metadataProvider_givenName</givenName>
-                <surName>metadataProvider_surName</surName>
+                <givenName>ERROR</givenName>
+                <surName>ERROR</surName>
             </individualName>
-            <organizationName>metadataProvider_organizationName</organizationName>
-            <electronicMailAddress>metadata_electronicMailAddress</electronicMailAddress>
-            <userId directory="https://orcid.org">metadataProvider_userId</userId>
+            <organizationName>ERROR</organizationName>
+            <electronicMailAddress>ERROR</electronicMailAddress>
+            <userId directory="https://orcid.org">ERROR</userId>
         </metadataProvider>
-        <pubDate>dataset_pubDate</pubDate>
+        <pubDate>3000</pubDate>
         <abstract>
-            <para>dataset_abstract_para</para>
+            <para>ERROR</para>
         </abstract>
+        <keywordSet>
+            <keyword>ERROR</keyword>
+        </keywordSet>
         <intellectualRights>
-            <para>This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.</para>
+            <para>ERROR</para>
         </intellectualRights>
         <coverage>
             <geographicCoverage>
-                <geographicDescription>geographicCoverage_geographicDescription</geographicDescription>
+                <geographicDescription>ERROR</geographicDescription>
                 <boundingCoordinates>
-                    <westBoundingCoordinate>geographicCoverage_westBoundingCoordinate</westBoundingCoordinate>
-                    <eastBoundingCoordinate>geographicCoverage_eastBoundingCoordinate</eastBoundingCoordinate>
-                    <northBoundingCoordinate>geographicCoverage_northBoundingCoordinate</northBoundingCoordinate>
-                    <southBoundingCoordinate>geographicCoverage_southBoundingCoordinate</southBoundingCoordinate>
+                    <westBoundingCoordinate>0.0</westBoundingCoordinate>
+                    <eastBoundingCoordinate>0.0</eastBoundingCoordinate>
+                    <northBoundingCoordinate>0.0</northBoundingCoordinate>
+                    <southBoundingCoordinate>0.0</southBoundingCoordinate>
                 </boundingCoordinates>
             </geographicCoverage>
             <taxonomicCoverage>
-                <generalTaxonomicCoverage>Data collected on a specific target species</generalTaxonomicCoverage>
+                <generalTaxonomicCoverage>ERROR</generalTaxonomicCoverage>
                 <taxonomicClassification>
-                    <taxonRankName>Species</taxonRankName>
-                    <taxonRankValue>Salmo Salar</taxonRankValue>
+                    <taxonRankName>ERROR</taxonRankName>
+                    <taxonRankValue>ERROR</taxonRankValue>
                 </taxonomicClassification>
             </taxonomicCoverage>
             <temporalCoverage>
                 <rangeOfDates>
                     <beginDate>
-                        <calendarDate>temporalCoverage_beginDate</calendarDate>
+                        <calendarDate>3000</calendarDate>
                     </beginDate>
                     <endDate>
-                        <calendarDate>temporalCoverage_endDate</calendarDate>
+                        <calendarDate>3000</calendarDate>
                     </endDate>
                 </rangeOfDates>
             </temporalCoverage>
         </coverage>
-        <maintenanceUpdateFrequency>dataset_maintenanceUpdateFrequency</maintenanceUpdateFrequency>
+        <maintenance>
+            <description>ERROR</description>
+            <maintenanceUpdateFrequency>annually</maintenanceUpdateFrequency>
+        </maintenance>
+        <contact>
+            <references>ERROR</references>
+        </contact>
     </dataset>
 </eml:eml>
