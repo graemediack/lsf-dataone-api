@@ -16,8 +16,8 @@ d1c <- D1Client(cn, mn)
 # Load STAGING2 authentication token from file
 source("dataoneTEST.token.R")
 # SET ENVIRONMENT
-cn <- CNode("DEV")
-mn <- getMNode(cn, "urn:node:mnTestKNB")
+cn <- CNode("STAGING2")
+mn <- getMNode(cn, "urn:node:mnTestKNB") # note command 'unlist(lapply(listNodes(cn), function(x) x@subject))' from dataone-federation vignette
 d1c <- D1Client(cn, mn)
 
 

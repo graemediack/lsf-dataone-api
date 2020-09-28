@@ -1,8 +1,15 @@
+# Search for and update an existing datapackage
+# Find search terms - useful documents and examples
+vignette("searching-dataone")
+??getQueryEngineDescription
+getQueryEngineDescription(mn,"solr")
 
+# Search
+queryParamList <- list(q="author:Graeme Diack", rows="100",fl="id,resourceMap,title,archived")
+result <- query(mn,solrQuery=queryParamList,as="data.frame")
+result %>% arrange(title)
 
-result <- query(testMn,solrQuery=list(q="metadataProvider:Graeme Diack"),as="data.frame")
-result[1,c("id", "title")]
-pid <- result[1,'id']
+result <- query(cn,solrQuery=list(q="author:Graeme Diack"),as="list")
 
 # Early lost in space PID's
 # urn:uuid:2fa7fee3-02ad-4ada-8ffe-202498397906
