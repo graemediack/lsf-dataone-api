@@ -5,7 +5,7 @@
 
 
 #IMPORT METADATA TIBBLE
-y <- read_csv("KNBTranslations_For_R_a.csv")
+y <- read_csv("KNBTranslations_For_R_b.csv", locale = locale(encoding = "latin1")) # added locale information as getting odd results with default UTF-8
 #SEPERATE keywords
 y_keywords <- y[, c("commonKeywords","additionalKeywords")]
 y_sub <- select(y, -c("commonKeywords","additionalKeywords"))
@@ -43,12 +43,13 @@ for(i in 1:nrow(y_sub)){ #rows ROWS CONTAIN NODE VALUES
   # APPLY keyword values to new nodes
   xml_find_all(x, "//keyword") %>% xml_set_text(keyword_vector)
   # Create and Set PID
-  id <- paste("urn:uuid:", UUIDgenerate(), sep="")
+  id_part <- UUIDgenerate()
+  id <- paste("urn:uuid:", id_part, sep="")
   xml_set_attr(x, "packageId", id)
   # set metadataProvider node id attribute so that CONTACT/REFERENCES node works
   xml_set_attr(xml_find_all(x, "//metadataProvider"),"id",y_sub[i,]$`metadataProvider/userId`)
-  # export to xml file, with custom file name
-  filename <- paste("eml_",i,".xml",sep = "")
+  # export to xml file, with custom file name based on generated uuid
+  filename <- paste("eml_",id_part,".xml",sep = "")
   write_xml(x,filename)
   
   dp <- new("DataPackage")
@@ -60,7 +61,7 @@ for(i in 1:nrow(y_sub)){ #rows ROWS CONTAIN NODE VALUES
   
   # with a metadata object added the package can now be uploaded
   
-  packageId <- uploadDataPackage(testClient, dp, public=FALSE, quiet=FALSE)
+  packageId <- uploadDataPackage(d1c, dp, public=FALSE, quiet=FALSE)
 }
 
 # EXAMPLE BUILD XML FROM SCRATCH
