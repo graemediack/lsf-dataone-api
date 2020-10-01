@@ -11,7 +11,7 @@ dp <- new("DataPackage")
 # and added to the DataPackage using addMember
 
 # Set filename containing required EML
-filename <- "uploadedEML/eml_1.xml"
+filename <- "enter_filename.eml"
 
 # Get values from EML file
 x <- read_xml(filename)

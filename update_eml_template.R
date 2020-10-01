@@ -36,16 +36,19 @@ for(i in 1:nrow(y_sub)){ #rows ROWS CONTAIN NODE VALUES
   additionalKeywords_vector <- str_trim(str_split(y_keywords$additionalKeywords[1],",")[[1]])
   # MERGE into keyword_vector
   keyword_vector <- c(commonKeywords_vector,additionalKeywords_vector)
+  
   #CREATE keyword NODES, add the same number as there are keywords (length of keyword_vector)
   for(kw in 1:length(keyword_vector)){
     xml_add_child(xml_find_all(x, xpath = "/eml:eml/dataset/keywordSet", xml_ns(x)), "keyword")
   }
   # APPLY keyword values to new nodes
   xml_find_all(x, "//keyword") %>% xml_set_text(keyword_vector)
+  
   # Create and Set PID
   id_part <- UUIDgenerate()
   id <- paste("urn:uuid:", id_part, sep="")
   xml_set_attr(x, "packageId", id)
+  
   # set metadataProvider node id attribute so that CONTACT/REFERENCES node works
   xml_set_attr(xml_find_all(x, "//metadataProvider"),"id",y_sub[i,]$`metadataProvider/userId`)
   # export to xml file, with custom file name based on generated uuid
@@ -63,13 +66,3 @@ for(i in 1:nrow(y_sub)){ #rows ROWS CONTAIN NODE VALUES
   
   packageId <- uploadDataPackage(d1c, dp, public=FALSE, quiet=FALSE)
 }
-
-# EXAMPLE BUILD XML FROM SCRATCH
-# x_root <- xml_new_root("eml")
-# xml_set_attr(x_root, "xmlns:eml","https://eml.ecoinformatics.org/eml-2.2.0")
-# xml_set_attr(x_root, "xmlns:stmml","http://www.xml-cml.org/schema/stmml-1.1")
-# xml_set_attr(x_root, "xmlns:xsi","http://www.w3.org/2001/XMLSchema-instance")
-# xml_set_attr(x_root, "xsi:schemaLocation","https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd")
-# xml_add_child(xml_find_all(x_root, xpath = "/eml"), "dataset")
-# xml_add_child(xml_find_all(x_root, xpath = "/eml/dataset", xml_ns(x_root)), "keywordSet")
-# xml_add_child(xml_find_all(x_root, xpath = "/eml/dataset/keywordSet", xml_ns(x_root)), "keyword")

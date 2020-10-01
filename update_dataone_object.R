@@ -42,6 +42,8 @@ pid <- "urn:uuid:7117441a-a2c5-4933-833b-684457f7fa70"
 pkg <- getDataPackage(d1c,identifier = pid, lazyLoad=TRUE,limit="0MB", quiet=FALSE)
 
 #TODO: Manipulate package contents and update. Does this create a new object, new uuid, and marks old object with obsoletedBy?
+
+
 ############
 #ARCHIVE
 
@@ -51,3 +53,9 @@ response <- archive(mn, pid)
 sysmeta <- getSystemMetadata(mn, pid)
 sysmeta@archived
 sysmeta
+
+for(pid in result$id){
+  archive(mn, pid)
+  sysmeta <- getSystemMetadata(mn, pid)
+  print(sysmeta@archived)
+}
