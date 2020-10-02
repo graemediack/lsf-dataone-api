@@ -5,7 +5,7 @@
 
 
 #IMPORT METADATA TIBBLE
-y <- read_csv("KNBTranslations_For_R_b.csv", locale = locale(encoding = "latin1")) # added locale information as getting odd results with default UTF-8
+y <- read_csv("KNBTranslations_For_R_Test.csv", locale = locale(encoding = "latin1")) # added locale information as getting odd results with default UTF-8
 #SEPERATE keywords
 y_keywords <- y[, c("commonKeywords","additionalKeywords")]
 y_sub <- select(y, -c("commonKeywords","additionalKeywords"))
